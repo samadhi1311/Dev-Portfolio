@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+a {
+	font-family: 'Space Mono', monospace;
+	font-weight: 400;
+	color: white;
+	transition: all 300ms ease;
+	z-index: 999;
+	text-shadow: 0 0 0px black;
+}
+
+a:hover {
+	text-shadow: 0 0 10px black;
+}
