@@ -6,6 +6,15 @@ export default defineConfig({
 	plugins: [react()],
 	base: '/Dev-Portfolio/',
 	build: {
-		sourcemaps: true,
+		sourcemap: true,
+		rollupOptions: {
+			onwarn(warning, defaultHandler) {
+				if (warning.code === 'SOURCEMAP_ERROR') {
+					return;
+				}
+
+				defaultHandler(warning);
+			},
+		},
 	},
 });
