@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { BackgroundGradientAnimation } from '../components/ui/background-gradient-animation';
 import NavigationBar from '../components/NavigationBar';
