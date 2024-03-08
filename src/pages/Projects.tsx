@@ -1,4 +1,3 @@
-import React from 'react';
 import { BackgroundGradientAnimation } from '../components/ui/background-gradient-animation';
 import NavigationBar from '../components/NavigationBar';
 import { BentoGrid, BentoGridItem } from '../components/ui/bento-grid';
@@ -66,9 +65,9 @@ const items = [
 function Projects() {
 	return (
 		<main>
-			<BackgroundGradientAnimation interactive={true} size={'100%'} className='h-screen -z-50'>
+			<BackgroundGradientAnimation interactive={true} size={'100%'} className='h-screen -z-50 pt-8'>
 				<header>
-					<NavigationBar className='absolute z-50' />
+					<NavigationBar />
 				</header>
 				<section className='z-50 flex flex-col items-center justify-center h-full'>
 					<BentoGrid className='max-w-4xl mx-auto md:auto-rows-[20rem] z-50'>
