@@ -10,7 +10,7 @@ export const BackgroundGradientAnimation = ({
 	thirdColor = '169, 89, 255',
 	fourthColor = '169, 89, 255',
 	fifthColor = '72, 156, 247',
-	pointerColor = '72, 156, 247',
+	pointerColor = '255, 255, 255',
 	size = '100%',
 	blendingValue = 'hard-light',
 	children,
@@ -74,7 +74,11 @@ export const BackgroundGradientAnimation = ({
 	};
 
 	return (
-		<div className={cn('h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]', containerClassName)}>
+		<div
+			className={cn(
+				'h-screen w-screen z-50 relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]',
+				containerClassName
+			)}>
 			<svg className='hidden'>
 				<defs>
 					<filter id='blurMe'>

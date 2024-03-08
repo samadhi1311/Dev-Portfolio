@@ -2,6 +2,7 @@ import { BackgroundGradientAnimation } from '../components/ui/background-gradien
 import NavigationBar from '../components/NavigationBar';
 import { BentoGrid, BentoGridItem } from '../components/ui/bento-grid';
 import { IconWorld, IconFileBroken, IconSignature } from '@tabler/icons-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Overnight from '../assets/overnight.png';
 import Probe from '../assets/probe.png';
 import Sithu from '../assets/sithu-light.svg';
@@ -67,20 +68,24 @@ const items = [
 
 function Projects() {
 	return (
-		<main>
-			<BackgroundGradientAnimation interactive={true} size={'100%'} className='h-screen -z-50 pt-8'>
-				<header>
-					<NavigationBar />
-				</header>
-				<section className='z-50 flex flex-col items-center justify-center h-full'>
-					<BentoGrid className='max-w-4xl mx-auto md:auto-rows-[20rem] z-50'>
-						{items.map((item, i) => (
-							<BentoGridItem key={i} title={item.title} description={item.description} header={item.header} className={item.className} icon={item.icon} url={item.url} />
-						))}
-					</BentoGrid>
-				</section>
-			</BackgroundGradientAnimation>
-		</main>
+		<BackgroundGradientAnimation interactive={false} size={'100%'} className='w-screen h-screen mt-8 -z-50'>
+			<header>
+				<NavigationBar />
+			</header>
+			<AnimatePresence mode='popLayout'>
+				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} exit={{ opacity: 0 }}>
+					<main className='absolute inset-0 z-10' key={'projects'}>
+						<div className='absolute inset-0 z-50 flex items-center justify-center px-4' style={{ zIndex: 999 }}>
+							<BentoGrid className='max-w-4xl mx-auto md:auto-rows-[20rem] z-50'>
+								{items.map((item, i) => (
+									<BentoGridItem key={i} title={item.title} description={item.description} header={item.header} className={item.className} icon={item.icon} url={item.url} />
+								))}
+							</BentoGrid>
+						</div>
+					</main>
+				</motion.div>
+			</AnimatePresence>
+		</BackgroundGradientAnimation>
 	);
 }
 export default Projects;
