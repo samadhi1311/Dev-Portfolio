@@ -2,10 +2,13 @@ import { BackgroundGradientAnimation } from '../components/ui/background-gradien
 import NavigationBar from '../components/NavigationBar';
 import { BentoGrid, BentoGridItem } from '../components/ui/bento-grid';
 import { IconWorld, IconFileBroken, IconSignature } from '@tabler/icons-react';
+import Overnight from '../assets/overnight.png';
+import Probe from '../assets/probe.png';
+import Sithu from '../assets/sithu-light.svg';
 
 const Skeleton1 = () => (
 	<div className='flex flex-1 w-full h-full min-h-[8rem] aspect-video rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black/50'>
-		<img src='src/assets/overnight.png' alt='' className='object-cover w-full h-full rounded-xl' />
+		<img src={Overnight} alt='' className='object-cover w-full h-full rounded-xl' />
 	</div>
 );
 
@@ -23,7 +26,7 @@ const Skeleton3 = () => (
 
 const Skeleton4 = () => (
 	<div className='flex flex-1 w-full h-full aspect-video min-h-[8rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black/50'>
-		<img src='src/assets/probe.png' alt='' className='object-cover w-full h-full rounded-xl' />
+		<img src={Probe} alt='' className='object-cover w-full h-full rounded-xl' />
 	</div>
 );
 
@@ -33,7 +36,7 @@ const items = [
 		description: 'Portfolio for graphical artists.',
 		header: <Skeleton1 />,
 		className: 'md:col-span-2',
-		icon: <img src='src/assets/sithu-light.svg' id='sithu' className='object-cover object-left h-8 invert dark:invert-0' />,
+		icon: <img src={Sithu} id='sithu' className='object-cover object-left h-8 invert dark:invert-0' />,
 		url: 'https://Sithruby.github.io/overnight',
 	},
 	{
